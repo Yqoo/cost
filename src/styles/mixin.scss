@@ -1,0 +1,189 @@
+@import './theme.scss';
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin pct($pct) {
+  width: #{$pct};
+  position: relative;
+  margin: 0 auto;
+}
+
+@mixin triangle($width, $height, $color, $direction) {
+  $width: $width/2;
+  $color-border-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+
+  @if $direction==up {
+    border-bottom: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  }
+
+  @else if $direction==right {
+    border-left: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+
+  @else if $direction==down {
+    border-top: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  }
+
+  @else if $direction==left {
+    border-right: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}
+@mixin themify($themes: $themes) {
+  @each $theme-name, $map in $themes {
+    .theme-#{$theme-name} & {
+      $theme-map:() !global;
+      @each $key, $value in $map {
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+//获取背景颜色
+@mixin background_color($color) {
+  @include themify {
+      background-color: themed($color)!important;
+  }
+}
+
+//获取图标颜色
+@mixin iconfont_color($color) {
+  @include themify {
+    color: themed($color);
+  }
+}
+
+//获取字体颜色
+@mixin title_color($color) {
+  @include themify {
+    color: themed($color)!important;
+  }
+}
+
+//获取submenu背景颜色
+@mixin submenu_item_bg($color) {
+  @include themify {
+    background-color: themed($color)!important;
+  }
+}
+
+//获取hover背景颜色
+@mixin menu_hover($color) {
+  @include themify {
+    background-color: themed($color)!important;
+  }
+}
+
+//获取 menu hover 字体颜色
+@mixin menu_text_hover($color) {
+  @include themify {
+    color: themed($color)!important;
+  }
+}
+//获取submenu hover 字体颜色
+@mixin submenu_hover($color) {
+  @include themify {
+    background-color: themed($color)!important;
+  }
+}
+
+//获取submenu hover 字体颜色
+@mixin submenu_text_hover($color) {
+  @include themify {
+    color: themed($color)!important;
+  }
+}
+
+//获取tagsView 背景颜色
+@mixin tags_active_bg($color) {
+  @include themify {
+    background-color: themed($color)!important;
+    border-color: themed($color)!important;
+  }
+}
+
+//获取navbar 背景颜色
+@mixin navbar_bg($color) {
+  @include themify {
+    background-color: themed($color)!important;
+  }
+}
+
+//获取sidebar logo背景颜色
+@mixin sidebar_logo_bg($color) {
+  @include themify {
+    background-color: themed($color)!important;
+  }
+}
+
+//获取sidebar logo 字体颜色
+@mixin sidebar_logo_text($color) {
+  @include themify {
+    color: themed($color)!important;
+  }
+}
+
+//获取导航a标签 字体颜色
+@mixin breadcrumb_a_color($color) {
+  @include themify {
+    color: themed($color)!important;
+  }
+}
+
+// accountTemplate 组件
+
+@mixin account_temp_bg($color) {
+  @include themify {
+    background-color: themed($color)!important;
+  }
+}
+
+@mixin account_temp_color($color) {
+  @include themify {
+    color: themed($color)!important;
+  }
+}

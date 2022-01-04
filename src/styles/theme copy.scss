@@ -1,0 +1,35 @@
+$themes: (
+  light: (
+    // sidebar
+    sidebar-background-color: #fff,
+    sidebar-iconfont-color: #000,
+    sidebar-title-color: #000,
+    menu-hover: #0270c1,
+    menu-text-hover: #fff,
+    submenu-text-hover: #fff,
+    // header
+    navbar-bg: #fff,
+    sidebar-logo-bg: #fff,
+    sidebar-logo-text: #000,
+    breadcrumb-a-color: #000,
+    //tags
+    tags-active-bg: #0270c1,
+    account-template-bg: #fff,
+    account-template-font-color: #304156
+  ),
+  dark: (
+    sidebar-background-color: #304156,
+    sidebar-iconfont-color: #fff,
+    sidebar-title-color: #fff,
+    menu-hover: #0270c1,
+    menu-text-hover: #fff,
+    submenu-text-hover: #fff,
+    navbar-bg: #304156,
+    tags-active-bg: #304156,
+    sidebar-logo-bg: #008df7,
+    sidebar-logo-text: #f7f7f7,
+    breadcrumb-a-color: #f7f7f7,
+    account-template-bg: #304156,
+    account-template-font-color: #fff
+  )
+)

@@ -1,0 +1,45 @@
+.el-submenu__title:hover{
+  @include submenu_hover('menu-hover');
+  @include submenu_text_hover('submenu-text-hover');
+  i {
+    @include menu_text_hover('menu-text-hover')
+  }
+}
+.sidebar-container {
+  @include background_color('sidebar-background-color')
+}
+.el-menu-item:hover {
+  &:hover {
+    @include menu_hover('menu-hover');
+    @include menu_text_hover('menu-text-hover');
+    i {
+      @include menu_text_hover('menu-text-hover')
+    }
+  }
+}
+.el-menu--vertical {
+  .nest-menu .el-submenu>.el-submenu__title,
+  .el-menu-item {
+    &:hover {
+      @include menu_hover('menu-hover');
+      @include menu_text_hover('menu-text-hover');
+      i {
+        @include menu_text_hover('menu-text-hover')
+      }
+    }
+  }
+}
+.tags-view-item.active {
+  @include tags_active_bg('tags-active-bg')
+}
+.main-container .navbar {
+  @include navbar_bg('navbar-bg')
+}
+.sidebar-logo-container {
+  @include sidebar_logo_bg('sidebar-logo-bg');
+}
+.el-breadcrumb__inner a, .sidebar-title, .no-redirect,
+.header-search .search-icon,
+.right-menu-item i {
+  @include breadcrumb_a_color('breadcrumb-a-color')
+}

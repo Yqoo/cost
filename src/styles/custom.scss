@@ -1,0 +1,27 @@
+// loading
+.custom-loading {
+  .el-loading-spinner {
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+    background: url(~@/assets/images/loading/jingli.gif) no-repeat;
+    background-size: 48px 48px;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: -26px;
+    width: auto;
+    text-align: center;
+    position: absolute;
+  }
+
+  .circular {
+    display: none;
+  }
+
+  .loading-text {
+    color: rgb(16, 142, 245);
+    margin-top: 30px;
+    margin-left: -20px;
+  }
+
+}
